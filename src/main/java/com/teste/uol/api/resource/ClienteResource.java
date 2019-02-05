@@ -99,6 +99,7 @@ public class ClienteResource {
 			return ResponseEntity.created(uri).body(clienteSalvo);
 			
 		}catch(Exception e){
+			ResponseEntity.notFound().build();
 			throw new RuntimeException();
 		}
 	}

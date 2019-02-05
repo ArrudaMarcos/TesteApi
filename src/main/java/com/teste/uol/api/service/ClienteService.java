@@ -1,7 +1,5 @@
 package com.teste.uol.api.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -13,7 +11,6 @@ import com.teste.uol.api.repository.ClienteRepository;
 @Service
 public class ClienteService {
 
-	private static final Logger log = LoggerFactory.getLogger(ClienteService.class);
 	
 	@Autowired
 	private ClienteRepository clienteRepository;
@@ -33,9 +30,7 @@ public class ClienteService {
 	}
 
 	public void atualizarPropriedadeIdade(long codigo, int idade) {
-		log.info(codigo + "," + idade);
 		Cliente clienteSalvo = buscaClientePeloCodigo(codigo);
-		log.info(clienteSalvo.toString());
 		clienteSalvo.setIdade(idade);
 		clienteRepository.save(clienteSalvo);
 		

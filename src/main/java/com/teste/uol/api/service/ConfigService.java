@@ -4,8 +4,6 @@
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -19,7 +17,6 @@ import com.teste.uol.api.model.LocationMetaWeather;
 public class ConfigService {
 
 	
-	private static final Logger log = LoggerFactory.getLogger(ConfigService.class);
 
 	@Autowired
 	private HttpServletRequest request;
@@ -49,7 +46,6 @@ public class ConfigService {
 				ipAddress = request.getRemoteAddr();
 			}
 		}
-		log.info(ipAddress);
 		return ipAddress;
 		
 	}
